@@ -106,3 +106,26 @@ Containers are labeled with IDs only. Codes B to E are mapped to the four deterg
 ## 9. Reporting
 
 All pre-registered results are reported whatever their direction or significance, including null results. Any departure from this plan is listed and explained in `README.md`.
+
+---
+
+## Amendment 1 (October 18, 2026, Day 6)
+
+This amendment was written and committed **before any Day-7 outcome data were recorded**. Containers are labeled with IDs only, and no results had been compared across arms. **TODO:** confirm this before committing.
+
+### What happened
+
+On the evening of Day 6, cucumber seedlings in many containers reached the lids. Inspection also showed that roots had grown into the paper towel fibers, and that some seedlings grew upright or became tangled with neighbors.
+
+### Changes
+
+1. **Lids.** As-is photos of all 48 containers were taken, then all 48 lids were removed at the same time. Lids stay off for every container.
+2. **Seedling length outcome redefined.** The co-primary length outcome is changed from root + shoot length to **hypocotyl length**: from the root-shoot junction (where root hairs stop) to the base of the seed leaves, traced along its curve, in mm. Ungerminated seeds count as 0 mm.
+   - *Reason:* roots embedded in the towel cannot be seen in photos, and pulling them out breaks them. Breakage would likely be worse for longer, healthier roots, so measurement error would be correlated with treatment and could bias the comparison. The hypocotyl lies on the towel surface and can be measured without removing the seedling.
+3. **Handling rules for measurement**, applied to every container in ID order:
+   - Upright seedlings are laid flat gently before the photo.
+   - Tangled seedlings are separated after wetting the towel. If they cannot be separated, the group's total hypocotyl length is divided by the number of seedlings and that value is recorded for each, flagged `tangled`.
+   - Broken seedlings: the pieces are measured and added, flagged `broken`.
+   - An empty seed coat is not used as the starting point.
+4. **Day-14 outcome dropped.** The pre-registered rule said to measure the secondary length outcome on the day seedlings touch the lids. Measuring requires laying seedlings flat and separating them, which damages them, so the experiment ends after the Day-7 measurement. The Day-6 as-is photos are kept as a record of the seedlings' state when they touched the lids. No Day-14 outcome will be reported.
+5. **Unchanged:** germination share (Day 7), the 2 mm germination rule, the arms, the estimators, randomization inference and the Holm adjustment.
