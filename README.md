@@ -3,8 +3,8 @@
 Practicum experiment for **Experimental Research: Design, Analysis, and Interpretation** (GU4724), Columbia University, Fall 2026.
 
 **Author:** Xingyi Wang
-**Status:** Main experiment running. Planted on the night of October 12, 2026 (Day 0); final measurement on Day 7 (October 19, 2026).
-**Last updated:** October 18, 2026
+**Status:** Measurement complete. Planted on the night of October 12, 2026 (Day 0); final measurement on the evening of October 18, 2026 (Day 6). Analysis pending.
+**Last updated:** October 19, 2026
 
 > Items marked **TODO** are details still to be filled in or confirmed. This README is a running log: it records what was planned, what was actually done, and every change made along the way.
 
@@ -35,7 +35,7 @@ The study involves **no human subjects**. Units are seed containers, and all out
 | Treatments | 5 arms: tap water, dish soap at 10 and 20 mL/L, laundry detergent at 10 and 20 mL/L |
 | Allocation per crop | 8 tap water, 4 per detergent arm |
 | Assignment | Complete random assignment within each crop (block randomization) |
-| Co-primary outcomes | Germination share and mean hypocotyl length, both on Day 7 (see Amendment 1 in `prereg.md`) |
+| Co-primary outcomes | Germination share and mean hypocotyl length, both measured on Day 6 (see Amendment 1 in `prereg.md`) |
 | Inference | Randomization inference, 10,000 simulated assignments |
 | Deviations | Logged; intention-to-treat analysis |
 
@@ -185,20 +185,24 @@ All 48 containers sit together on one surface, away from radiators, vents and di
 
 ## 6. Daily procedure (Days 1–7)
 
-- **Every day:** photograph the full grid; check for mold, spills or other problems; record room temperature if possible; rotate the whole layout 180 degrees so all containers get equal exposure to the light source.
-- **Days 2, 4 and 6:** add the fixed top-up volume to every container, in ID order, each with its own solution. **TODO:** top-up volume in mL.
-- **Never:** water one container more or less than the others, replace seeds, remove containers, or move containers between grid positions.
+**Planned:** daily photos and checks, daily rotation of the layout, and a fixed top-up for every container on Days 2, 4 and 6.
 
-Every watering and problem is recorded in `data/log.csv` (or the Log sheet of `data/measurements_2026-10-18.xlsx`). After the lids were removed on Day 6, any change to watering applies to all containers at once and is logged.
+**What was actually done:**
+
+- **Watering:** no top-ups on Days 2 and 4. Up to the measurement, every container received only the 3 mL of its assigned solution given at planting. Each container received another 3 mL of its own solution on the evening of Day 6, after the measurement. Because every container was treated the same way, this does not bias the comparison between arms, but it differs from the pre-registered schedule.
+- **Daily checks, photos and rotation:** none were done on Days 1 to 5. Containers were left undisturbed in their grid positions until Day 6.
+- No container was removed, re-planted or moved between grid positions.
+
+Events are recorded in the Log sheet of `data/measurements_2026-10-18.xlsx`.
 
 ### Schedule
 
 | Date | Day | Task |
 | --- | --- | --- |
 | Oct 12 | 0 | Planting |
-| Oct 13–17 | 1–5 | Daily germination count and photos; top-ups on Oct 14 and 16 |
-| Oct 18 | 6 | Top-up; seedlings reach lids; as-is photos; all lids removed; Amendment 1 |
-| Oct 19 | 7 | Final measurement: germination share and hypocotyl length; experiment ends |
+| Oct 13–17 | 1–5 | Left undisturbed: no watering, checks, photos or rotation |
+| Oct 18 (evening) | 6 | Seedlings reach lids; final measurement by hand; 3 mL watering after measuring; lids put back |
+| Oct 19 | 7 | Photos of all 48 containers (record only); Amendment 1 committed |
 
 ---
 
@@ -206,22 +210,22 @@ Every watering and problem is recorded in `data/log.csv` (or the Log sheet of `d
 
 | Outcome | Definition | When |
 | --- | --- | --- |
-| Germination share | Germinated seeds / 10 per container; a seed counts as germinated when its root is at least 2 mm long | Daily, Days 1–7 |
-| Hypocotyl length | From the root-shoot junction (where root hairs stop) to the base of the seed leaves, traced along the curve; mean over all 10 seeds per container, in mm; ungerminated seeds count as 0 mm | Day 7 |
+| Germination share | Germinated seeds / 10 per container; a seed counts as germinated when its root is at least 2 mm long | Day 6 (final measurement) |
+| Hypocotyl length | From the root-shoot junction (where root hairs stop) to the base of the seed leaves, measured along the curve with a flexible tape measure; mean over all 10 seeds per container, in mm; ungerminated seeds count as 0 mm | Day 6 (final measurement) |
 
-Germination share and Day-7 hypocotyl length are **co-primary outcomes**. Days to germination is secondary. The Day-14 outcome was dropped on Day 6 (see Section 9). Full definitions are in `prereg.md`, including Amendment 1.
+Germination share and hypocotyl length, both measured on Day 6, are the **co-primary outcomes**. Days to germination could not be estimated because no daily counts were taken, and the Day-14 outcome was dropped (see Section 9). Full definitions are in `prereg.md`, including Amendment 1.
 
-### Measuring seedlings
+### How seedlings were measured
 
-On paper towels, seedlings grow flat along the towel, and roots grow into the towel fibers. Hypocotyl length is therefore measured instead of root length or height (Amendment 1):
+Seedlings grew flat along the towel, and roots grew into the towel fibers, so hypocotyl length was measured instead of root length or height (Amendment 1). On the evening of Day 6, in container ID order:
 
-1. Lay any upright seedlings flat; separate tangled seedlings after wetting the towel.
-2. Place the open container on a flat surface with a ruler lying flat beside it.
-3. Photograph from directly above at a fixed height, with the container ID and ruler in the frame.
-4. In ImageJ/Fiji, set the scale using the ruler (Analyze > Set Scale), then trace each hypocotyl with the segmented-line tool and measure it (Analyze > Measure).
-5. Record each seed in `data/measurements_2026-10-18.xlsx` (Seedlings sheet), with a flag for upright, tangled or broken seedlings.
+1. The whole paper towel with its seedlings was lifted out of the container and laid flat on a table.
+2. Upright seedlings were laid flat; tangled seedlings were separated where possible (see the rules in `prereg.md`).
+3. Each hypocotyl was measured by hand with a flexible tape measure, in mm.
+4. Each seed was recorded in `data/measurements_2026-10-18.xlsx` (Seedlings sheet), with a flag for upright, tangled or broken seedlings.
+5. The towel was returned to its container and the lid was put back.
 
-Containers are measured in ID order, 01 to 48, with the same rules for every container.
+No photos were taken for measurement. Photos taken afterwards are a visual record only.
 
 ---
 
@@ -250,12 +254,14 @@ A figure will show each container's outcome by arm and crop, with arm means and 
 | Seed weight as a covariate | Dropped; grid position used instead | A 0.1 g kitchen scale cannot weigh 10 small seeds accurately |
 | Solutions mixed fresh on every watering day | One batch for the whole experiment | Keeps concentrations identical across waterings |
 | Germination share as the only primary outcome | Germination share and Day-7 seedling length as co-primary outcomes, with Holm adjustment | Pilot showed nearly all seeds germinate even at the highest dose |
-| Height measured on Day 14 | Length measured from photos | Seedlings grow sideways on paper towels |
-| Lids kept on throughout | All 48 lids removed on Day 6, after as-is photos | Seedlings reached the lids (Amendment 1) |
 | Seedling length = root + shoot | Hypocotyl length only | Roots grew into the towel; pulling them out would break them in a way likely correlated with treatment (Amendment 1) |
-| Day-14 length as a secondary outcome | Dropped; experiment ends after Day 7 | Measuring on Day 7 requires flattening and separating seedlings, which damages them (Amendment 1) |
+| Fixed top-ups on Days 2, 4, 6, 8, 10 and 12 | Only the 3 mL planting volume before measurement; one 3 mL watering after measuring on Day 6 | Top-ups were not done; applied equally to all containers (Amendment 1) |
+| Measurement on Day 7 from photos, using ImageJ | Measurement on Day 6 by hand with a flexible tape measure; no photos | Seedlings reached the lids on Day 6 (Amendment 1) |
+| Day-14 length as a secondary outcome | Dropped; Day 6 is the final measurement | Measuring required lifting out the towels and handling the seedlings (Amendment 1) |
 
-**Pre-registration timing:** `prereg.md` was written and committed on October 13, 2026 (Day 1), after planting but before any outcome data were recorded or analyzed. The design, doses and allocation were fixed before planting; the outcome definitions and analysis plan were formally committed on Day 1. **TODO:** confirm no outcome data had been recorded before the commit.
+**Pre-registration timing:** `prereg.md` was written and committed on October 13, 2026 (Day 1, commit `552906e`), after planting and before any outcome data were recorded; the containers were left undisturbed on Days 1 to 5. The design, doses and allocation were fixed before planting.
+
+**Amendment 1 timing:** the measurement rules were decided on the evening of October 18, before the measurement, but Amendment 1 was committed on October 19, after the measurement. This is stated openly in `prereg.md`.
 
 ---
 
@@ -265,7 +271,10 @@ A figure will show each container's outcome by arm and crop, with arm means and 
 - **Simulated greywater:** a fixed recipe improves internal validity but omits food residue, grease and the variable salts of real greywater.
 - **Doses:** both doses are above the rough estimate for a typical dishwashing basin, so they represent concentrated greywater rather than average household greywater.
 - **Early outcomes only:** germination and 7-day hypocotyl length do not capture root growth, harvest yield or the long-term buildup of salts in soil.
-- **Lids removed on Day 6:** evaporation after lid removal may have concentrated the solutions slightly. This applies to all arms equally.
+- **Watering differed from the plan:** before measurement, containers received only the 3 mL given at planting. Treatment exposure was therefore a single dose of each solution, and seedlings may have been somewhat water-stressed, equally across arms.
+- **No daily checks or rotation:** containers were not rotated, so any light or temperature gradient across the grid was not evened out. The randomized grid positions protect against bias, and row and column are used as covariates.
+- **Hand measurement:** a flexible tape measure has about 1 mm precision, and no photos were kept for re-measurement or blind checking.
+- **Measured on Day 6, not Day 7.**
 - **Small sample:** 4 containers per detergent arm per crop limits power to detect small effects.
 - **Partial blinding:** see Section 5.
 - **Behavior is out of scope:** whether households would adopt greywater reuse is a question about people and is left for future research.
@@ -279,31 +288,23 @@ A figure will show each container's outcome by arm and crop, with arm means and 
 ├── README.md              # this file: design and running log
 ├── prereg.md              # pre-registered hypotheses and analysis plan
 ├── assign.R               # random assignment script
-├── analysis.R             # estimates, randomization inference, figure
+├── analysis.R             # estimates, randomization inference, figure (to be written)
 ├── data/
 │   ├── pilot.csv          # pilot setup and results
 │   ├── assignment.csv     # container ID, crop, code, grid row and column
-│   ├── log.csv            # waterings, temperature, deviations, notes
-│   ├── germination.csv    # daily germinated count per container
-│   ├── growth.csv         # exported seedling lengths (Day 7)
-│   └── measurements_2026-10-18.xlsx  # per-seed measurement record and container summary
-└── photos/                # daily photos, named YYYY-MM-DD_grid.jpg or YYYY-MM-DD_id07.jpg
+│   ├── measurements_2026-10-18.xlsx  # per-seed measurements (Day 6), container summary, event log
+│   └── growth.csv         # Seedlings sheet exported as CSV, for analysis in R
+└── photos/                # record photos, named YYYY-MM-DD_id07.jpg; not used for measurement
 ```
 
-Raw data files are never edited after entry; any cleaning happens in code.
+Raw measurements are entered once in the workbook; any later correction is committed with a note explaining it, and all cleaning for analysis happens in code.
 
-### Data formats
+### Data format
 
-`data/germination.csv`
+`data/growth.csv` (one row per seed):
 ```csv
-date,day,id,germinated,notes
-2026-10-13,1,01,0,
-```
-
-`data/log.csv`
-```csv
-date,time,id,action,code,volume_ml,temp_c,notes
-2026-10-12,22:00,ALL,plant,,3,,Day 0 planting
+date,day,container_id,crop,code,seed_no,germinated,hypocotyl_mm,flag,photo_file,notes
+2026-10-18,6,7,cucumber,B,3,1,18,upright_flattened,,
 ```
 
 ---
@@ -317,8 +318,10 @@ date,time,id,action,code,volume_ml,temp_c,notes
 | Oct 8, 2026 (night) | Pilot started: 2 tap-water containers, 4 detergent cups |
 | Oct 12, 2026 | Pilot result: nearly all seeds germinated at every dose; five-arm design finalized |
 | Oct 12, 2026 (night) | Solutions prepared; 480 seeds planted in 48 containers (Day 0) |
-| Oct 13, 2026 | README written; `prereg.md` committed (co-primary outcomes, analysis plan) |
-| Oct 18, 2026 (Day 6) | Cucumber seedlings reached the lids; as-is photos taken; all lids removed; Amendment 1 committed (hypocotyl length, handling rules, Day-14 outcome dropped) |
+| Oct 13, 2026 | Repository created; README and `prereg.md` committed (co-primary outcomes, analysis plan), commit `552906e` |
+| Oct 13–17, 2026 (Days 1–5) | Containers left undisturbed: no watering, checks, photos or rotation. |
+| Oct 18, 2026 (Day 6, evening) | Seedlings reached the lids. Final measurement: towels lifted out, laid flat, hypocotyls measured by hand with a tape measure. Then 3 mL of each container's own solution added and lids put back. |
+| Oct 19, 2026 (Day 7) | Photos of all 48 containers (record only). Amendment 1, updated README and the measurement workbook committed, after the measurement. |
 
 Add a row for every later event, including waterings, problems and measurements.
 

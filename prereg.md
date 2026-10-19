@@ -5,9 +5,9 @@
 
 ## Timing
 
-This plan was written and committed on **October 13, 2026 (Day 1)**, after the seeds were planted on the night of October 12 (Day 0) and **before any outcome data were recorded or analyzed**.
+This plan (Sections 1 to 9) was **written and committed to GitHub on October 13, 2026 (Day 1)**, in commit `552906e`, after the seeds were planted on the night of October 12 (Day 0) and **before any outcome data were recorded or analyzed**. The containers were left undisturbed on Days 1 to 5.
 
-**TODO:** confirm that no germination counts or seedling measurements had been recorded before this commit. If any had, list them here.
+Sections 1 to 9 are kept as committed on October 13, apart from one bracketed note added in Section 3. Every later change is listed in Amendment 1, and the full edit history is visible in the repository.
 
 The design, doses and allocation were fixed before planting; see `README.md` for the full design history, including changes made after the pilot.
 
@@ -43,7 +43,7 @@ The pilot found that nearly all seeds germinated even at 20 mL/L, so effects on 
 | L20 | Laundry detergent, 20 mL/L | 4 |
 
 - **Assignment:** complete random assignment within each crop, using `randomizr::block_ra` with a fixed seed (`assign.R`). Grid positions were also randomized.
-- **Watering:** 3 mL at planting; a fixed top-up volume for every container on Days 2, 4, 6, 8, 10 and 12. **TODO:** top-up volume in mL.
+- **Watering:** 3 mL at planting; a fixed top-up volume for every container on Days 2, 4, 6, 8, 10 and 12. *(The top-up volume was never set, and no top-ups were given; see Amendment 1.)*
 - **Solutions:** made once, in a single 500 mL batch per arm, before planting.
 
 ## 4. Outcomes
@@ -109,23 +109,31 @@ All pre-registered results are reported whatever their direction or significance
 
 ---
 
-## Amendment 1 (October 18, 2026, Day 6)
+## Amendment 1 (recorded October 19, 2026)
 
-This amendment was written and committed **before any Day-7 outcome data were recorded**. Containers are labeled with IDs only, and no results had been compared across arms. **TODO:** confirm this before committing.
+### Timing
+
+This amendment records events and decisions from the evening of **October 18, 2026 (Day 6)**. The measurement rules below were decided that evening, before the measurement was taken, while containers were labeled with IDs only and codes B to E were still blinded. No results had been compared across arms. This amendment was committed to GitHub on October 19, after the measurement had been taken, so its commit time does not by itself prove the rules came first.
 
 ### What happened
 
-On the evening of Day 6, cucumber seedlings in many containers reached the lids. Inspection also showed that roots had grown into the paper towel fibers, and that some seedlings grew upright or became tangled with neighbors.
+1. **Watering.** No top-ups were given on Days 2 and 4, so the pre-registered top-up schedule was not followed. This applied to every container equally. The only watering after planting was on the evening of Day 6, when each container received 3 mL of its own assigned solution, **after** the measurement. Up to the measurement, every container therefore received only the 3 mL given at planting.
+2. **Seedlings reached the lids.** On the evening of Day 6, cucumber seedlings in many containers touched the lids. Inspection also showed that roots had grown into the paper towel fibers, and that some seedlings grew upright or became tangled.
+3. **Measurement on Day 6.** The final measurement was taken on the evening of Day 6, not on Day 7 as pre-registered, because the seedlings had reached the lids. For each container, in ID order, the whole paper towel with its seedlings was lifted out, laid flat on a table, and each seedling was measured by hand with a flexible tape measure, in mm. **No photos were taken for measurement.**
+4. **Lids.** Lids were removed only while measuring and were put back on afterwards, so all containers stayed covered.
 
-### Changes
+### Changes to the pre-registered plan
 
-1. **Lids.** As-is photos of all 48 containers were taken, then all 48 lids were removed at the same time. Lids stay off for every container.
-2. **Seedling length outcome redefined.** The co-primary length outcome is changed from root + shoot length to **hypocotyl length**: from the root-shoot junction (where root hairs stop) to the base of the seed leaves, traced along its curve, in mm. Ungerminated seeds count as 0 mm.
-   - *Reason:* roots embedded in the towel cannot be seen in photos, and pulling them out breaks them. Breakage would likely be worse for longer, healthier roots, so measurement error would be correlated with treatment and could bias the comparison. The hypocotyl lies on the towel surface and can be measured without removing the seedling.
-3. **Handling rules for measurement**, applied to every container in ID order:
-   - Upright seedlings are laid flat gently before the photo.
-   - Tangled seedlings are separated after wetting the towel. If they cannot be separated, the group's total hypocotyl length is divided by the number of seedlings and that value is recorded for each, flagged `tangled`.
-   - Broken seedlings: the pieces are measured and added, flagged `broken`.
-   - An empty seed coat is not used as the starting point.
-4. **Day-14 outcome dropped.** The pre-registered rule said to measure the secondary length outcome on the day seedlings touch the lids. Measuring requires laying seedlings flat and separating them, which damages them, so the experiment ends after the Day-7 measurement. The Day-6 as-is photos are kept as a record of the seedlings' state when they touched the lids. No Day-14 outcome will be reported.
-5. **Unchanged:** germination share (Day 7), the 2 mm germination rule, the arms, the estimators, randomization inference and the Holm adjustment.
+1. **Seedling length outcome redefined.** The co-primary length outcome is changed from root + shoot length to **hypocotyl length**: from the root-shoot junction (where root hairs stop) to the base of the seed leaves, measured along its curve, in mm. Ungerminated seeds count as 0 mm. This is what was measured.
+   - *Reason:* roots had grown into the towel fibers, and pulling them out breaks them. Breakage would likely be worse for longer, healthier roots, so root measurement error would be correlated with treatment and could bias the comparison. The hypocotyl lies on the towel surface and can be measured without pulling the seedling out.
+2. **Measurement method.** Hand measurement with a flexible tape measure replaces measurement from photos. Its precision is about 1 mm.
+3. **Handling rules** used during measurement, for every container:
+   - Upright seedlings were laid flat gently before measuring.
+   - Tangled seedlings were separated. If they could not be separated, the group's total hypocotyl length was divided by the number of seedlings and that value was recorded for each, flagged `tangled`.
+   - Broken seedlings: the pieces were measured and added, flagged `broken`.
+   - An empty seed coat was not used as the starting point.
+   These rules were applied to every container.
+4. **Timing of the outcomes.** Both co-primary outcomes (germination share and hypocotyl length) are measured on Day 6 instead of Day 7.
+5. **Day-14 outcome dropped.** Measurement required lifting out the towels and handling the seedlings, so the Day-6 measurement is the final measurement. No Day-14 outcome will be reported.
+6. **Photos.** Photos of all 48 containers taken after the measurement are a visual record only. They are not used to measure outcomes.
+7. **Unchanged:** the arms, the 2 mm germination rule, the estimators, randomization inference and the Holm adjustment.
